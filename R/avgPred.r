@@ -26,6 +26,8 @@ avgPred = function ( formula, weights = NULL, data ) {
   return ( reg.mod )
 }
 
+
+# example ---------
 reg.mod = avgPred ( count ~ spray, data = InsectSprays )
 reg.mod$avgVal
 
