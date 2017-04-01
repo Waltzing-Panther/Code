@@ -1,5 +1,16 @@
 avgPred = function ( formula, weights = NULL, data ) {
-  # requires data to be a n x 2 dataframe.
+  # Computes the average predicated value for a one - way ANOVA
+  #   using weighted averages.
+  #
+  # Args: 
+  #   formula: The formula to be used.
+  #   weights: A vector of weights for each factor level. Must sum to one.
+  #   data: The data set to be used. Needs to be n x 2 data frame.
+  #
+  # Return:
+  #   An lm object that is the same as the one returned from lm()
+  #   except with an added variable "avgVal" which is the weighted
+  #   average predicted value among the factors.
   reg.mod = lm ( formula , data = data )
   
   counts = table ( data [ , 2 ] ) 
